@@ -1,0 +1,14 @@
+-- Small key/value store for app-level settings (e.g. selected OSM server).
+CREATE TABLE setting (
+    key TEXT NOT NULL PRIMARY KEY,
+    value TEXT NOT NULL
+);
+
+selectValue:
+SELECT value FROM setting WHERE key = ?;
+
+upsert:
+INSERT OR REPLACE INTO setting(key, value) VALUES (?, ?);
+
+delete:
+DELETE FROM setting WHERE key = ?;
