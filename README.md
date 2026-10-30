@@ -57,8 +57,9 @@ Mapeia is:
 ## Architecture
 
 ```
-composeApp/         Compose Multiplatform UI (Android + iOS)
+androidApp/         Thin Android host app
 iosApp/             Thin Xcode host app
+composeApp/         Compose Multiplatform UI (Android + iOS)
 shared/
   osm/              OSM API v0.6 + Overpass clients, OAuth2 PKCE
   quests/           Quest definitions, applicability rules, answer → tag changes
@@ -76,7 +77,7 @@ Requirements: JDK 17+, Android Studio, Xcode 16+ (for iOS, macOS only).
 git clone https://github.com/isaquefontinele/mapeia.git
 cd mapeia
 cp secrets.properties.example secrets.properties   # fill in your own OSM OAuth client id
-./gradlew :composeApp:installDebug                 # Android
+./gradlew :androidApp:installDebug                 # Android
 open iosApp/iosApp.xcodeproj                       # iOS
 ```
 
