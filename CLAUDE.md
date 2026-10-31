@@ -66,6 +66,16 @@ build phase, so building in Xcode also builds the Kotlin framework.
 
 A `local.properties` with `sdk.dir=...` (gitignored) is needed if `ANDROID_HOME` is not set.
 
+## Configuration and secrets
+
+`:shared:generateBuildSecrets` reads the untracked `secrets.properties` (template:
+`secrets.properties.example`) and generates the internal `BuildSecrets` object in
+`shared/build/generated/`. Every key has a default, so the build and CI work without the
+file; never make a key mandatory. App code reads configuration through `AppConfig`
+(injected by Koin), which picks the `OsmServer`: development for debug builds,
+production for release builds, unless `OSM_SERVER` overrides it. New keys go in the
+generator's defaults map, `secrets.properties.example` and `AppConfig`.
+
 ## Conventions
 
 - Code, comments, docs, commit messages and issues are in **English**.

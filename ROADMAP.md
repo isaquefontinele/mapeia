@@ -5,7 +5,7 @@ Total planned work to a first public beta: **~110–140 hours**.
 ## Milestone 0 — Foundation (~10h)
 - [x] KMP + Compose Multiplatform skeleton (Android + iOS), Koin, SQLDelight
 - [x] GitHub Actions: build Android, build iOS framework, run shared tests
-- [ ] `secrets.properties.example` + build config for OSM dev vs. production server
+- [x] `secrets.properties.example` + build config for OSM dev vs. production server
 
 ## Milestone 1 — Map (~14h)
 - [ ] MapLibre Compose map with configurable vector tile style

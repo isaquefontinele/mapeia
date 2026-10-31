@@ -76,12 +76,12 @@ Requirements: JDK 17+, Android Studio, Xcode 16+ (for iOS, macOS only).
 ```bash
 git clone https://github.com/isaquefontinele/mapeia.git
 cd mapeia
-cp secrets.properties.example secrets.properties   # fill in your own OSM OAuth client id
+cp secrets.properties.example secrets.properties   # optional: your own OSM OAuth client ids
 ./gradlew :androidApp:installDebug                 # Android
 open iosApp/iosApp.xcodeproj                       # iOS
 ```
 
-To test without touching the real map, point the app to the **OSM development server** (`master.apis.dev.openstreetmap.org`) in `secrets.properties`. Development builds use it by default.
+Debug builds talk to the **OSM development server** (`master.apis.dev.openstreetmap.org`), so you can test without touching the real map; release builds use the production server. Set `OSM_SERVER=dev` or `OSM_SERVER=production` in `secrets.properties` to override. Every key in that file is optional, so the project builds without it.
 
 ## Privacy
 
